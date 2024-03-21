@@ -37,18 +37,17 @@ export default function Banner1({ className = "" }: { className?: string }) {
                                     <CardContent className="p-5">
                                         <div className="flex justify-between gap-3">
                                             <div>
-                                                <Select>
+                                            <Select>
                                                     <SelectTrigger className="w-[180px]">
-                                                        <SelectValue placeholder="Select a fruit" />
+                                                        <SelectValue placeholder="Pilih Tipe" />
                                                     </SelectTrigger>
                                                     <SelectContent>
                                                         <SelectGroup>
-                                                            <SelectLabel>Fruits</SelectLabel>
-                                                            <SelectItem value="apple">Apple</SelectItem>
-                                                            <SelectItem value="banana">Banana</SelectItem>
-                                                            <SelectItem value="blueberry">Blueberry</SelectItem>
-                                                            <SelectItem value="grapes">Grapes</SelectItem>
-                                                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                                                            <SelectLabel>Semua</SelectLabel>
+                                                            <SelectItem value="apple">Rumah</SelectItem>
+                                                            <SelectItem value="banana">Apartemen</SelectItem>
+                                                            <SelectItem value="blueberry">Villa</SelectItem>
+                                                            <SelectItem value="grapes">Ruko</SelectItem>
                                                         </SelectGroup>
                                                     </SelectContent>
                                                 </Select>
