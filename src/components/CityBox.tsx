@@ -3,7 +3,7 @@ import { Card, CardContent } from "./ui/card";
 export default function CityBox() {
     return (
         <>
-            <Card className="bg-[#96c0ff]">
+            <Card className="bg-gradient-to-br from-sky-700 to-sky-500 text-white">
                 <CardContent className="p-5">
                     <div className="flex flex-col gap-3">
                         <div>

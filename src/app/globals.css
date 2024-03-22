@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 216 100% 31%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;
@@ -73,4 +73,17 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bg-gradient {
+  background: rgb(7,138,255);
+  background: linear-gradient(140deg, rgba(7,138,255,1) 0%, rgba(188,118,85,1) 61%, rgba(243,115,33,1) 95%);
+}
+
+.ranting svg {
+  display: initial;
 }

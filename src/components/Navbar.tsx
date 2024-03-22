@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 export default function Navbar({ className = "" }: { className?: string }) {
     return (
         <>
-            <div className="border-b sticky top-0 bg-background p-3 py-4 z-[99]">
+            <div className="border-b sticky top-0 bg-background p-3 py-4 z-[99] shadow-sm">
                 <InnerContainer>
                     <div className="flex justify-between">
                         <div>

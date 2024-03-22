@@ -1,3 +1,4 @@
+"use client"
 import {
     Card,
     CardContent,
@@ -22,6 +23,33 @@ import { Search } from "lucide-react";
 
 
 export default function Banner1({ className = "" }: { className?: string }) {
+    const getPermissionGeo = () => {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+                },
+                function (error) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("User denied the request for Geolocation.")
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location information is unavailable.")
+                            break;
+                        case error.TIMEOUT:
+                            alert("The request to get user location timed out.")
+                            break;
+                    }
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.")
+        }
+    }
+
     return (
         <>
             <div className="w-screen h-screen relative bg-[url('/banner1.png')] bg-cover bg-center">
@@ -37,7 +65,7 @@ export default function Banner1({ className = "" }: { className?: string }) {
                                     <CardContent className="p-5">
                                         <div className="flex justify-between gap-3">
                                             <div>
-                                            <Select>
+                                                <Select>
                                                     <SelectTrigger className="w-[180px]">
                                                         <SelectValue placeholder="Pilih Tipe" />
                                                     </SelectTrigger>
@@ -53,7 +81,12 @@ export default function Banner1({ className = "" }: { className?: string }) {
                                                 </Select>
                                             </div>
                                             <div className="flex-1">
-                                                <InputGroup placeholder="Cari Lokasi dan nama properti" icon={<Search className="text-primary" />} className="w-full" />
+                                                <div className="relative">
+                                                    <div className="absolute top-[9px] left-3">
+                                                        <Search className="text-primary" size={20} />
+                                                    </div>
+                                                    <Input placeholder="Cari Lokasi dan nama properti" onClick={getPermissionGeo} className="w-full pl-10" />
+                                                </div>
                                             </div>
                                             <div>
                                                 <Button className="w-full px-10">Cari</Button>
